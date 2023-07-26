@@ -83,7 +83,6 @@ class Screen{
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(5000);
 
 
         }
