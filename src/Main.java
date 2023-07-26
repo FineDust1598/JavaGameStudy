@@ -1,17 +1,89 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+//화면을 출력하는 클래스
+class Screen{
+    //시작화면 출력
+    void startScreen(){
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("┃                                                            ┃");
+        System.out.println("┃                                                            ┃");
+        System.out.println("┃                           농서스                            ┃");
+        System.out.println("┃                                                            ┃");
+        System.out.println("┃                                                            ┃");
+        System.out.println("┃                        1. Play                             ┃");
+        System.out.println("┃                        2. Setting                          ┃");
+        System.out.println("┃                                                            ┃");
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    }
+}
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    //정수인지 확인하는 메서드
+    static boolean isInteger(String strValue){
+        try{
+            Integer.parseInt(strValue);
+            return true;
+        }catch (NumberFormatException ex){
+            return false;
         }
+    }
+    static int inputCheck(String strValue){
+        if(isInteger(strValue)){
+            if(Integer.parseInt(strValue)==1){
+                return 1;
+            }
+            else if (Integer.parseInt(strValue)==2) {
+                return 2;
+            }
+            else{
+                return 3;
+            }
+        }
+        else{
+            return 4;
+        }
+    }
+    public static void main(String[] args) {
+        //메인화면 만들기
+        String a = "";
+        int checkNum;
+        //시작화면 출력
+        Screen sr = new Screen();
+        sr.startScreen();
+        //입력값 받기
+        Scanner sc = new Scanner(System.in);
+        a = sc.next();
+
+        while (true){
+            checkNum = inputCheck(a);
+            if(checkNum==1){
+                System.out.println("게임 플레이");
+                break;
+            }
+            else if(checkNum==2){
+                System.out.println("세팅화면 출력");
+                break;
+            }
+            else if(checkNum==3){
+                System.out.println("잘못된 숫자 입력, 화면 재 출력");
+                sr.startScreen();
+                a = sc.next();
+            }
+            else{
+                System.out.println("잘못된 문자 입력, 화면 재 출력");
+                sr.startScreen();
+                a = sc.next();
+            }
+        }
+        sc.close();
+
+
+
+
+
+
+
+
+
+
+
     }
 }
