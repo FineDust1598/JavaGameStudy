@@ -1,6 +1,24 @@
 import java.util.Scanner;
 import java.time.LocalDateTime;
-
+class character{
+    float mana;
+}
+class nasus extends character{
+    boolean hasSkill;
+}
+class grain extends character{
+    String type;
+}
+class tool{
+    String name;
+    int price;
+}
+class tool_Yuumi extends tool{
+}
+class tool_Janna extends tool{
+}
+class tool_Nami extends tool{
+}
 //화면을 출력하는 클래스
 class Screen{
     //시작화면 출력
@@ -92,6 +110,38 @@ class Screen{
         }
 
 
+    }
+    void gameScreen(){
+        try{
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                             밭으로 이동중...                           ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("┃                                  ┃                                   ┃");
+            System.out.println("┃      작물 이름 :                   ┃                                   ┃");
+            System.out.println("┃                                  ┃                                    ┃");
+            System.out.println("┃      작물 종류 :                   ┃                                   ┃");
+            System.out.println("┃                                  ┃                                   ┃");
+            System.out.println("┃                                  ┃                                   ┃");
+            System.out.println("┃                                  ┃                                   ┃");
+            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃          1. 수확한다          2. 지나친다            3. 상점             ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            Thread.sleep(5000);
+        }
+        catch (Exception e){
+            System.out.println("에러로 초기화면 출력");
+            startScreen();
+        }
     }
 }
 public class Main {
