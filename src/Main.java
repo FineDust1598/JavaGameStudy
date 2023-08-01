@@ -10,6 +10,7 @@ public class Main {
         String startInput;
         int checkNum;
         nasus Nasus = new nasus("■ ■ ■");
+        yumi Yumi = new yumi("Yumi", 10000, true);
         String[] wheatName = {"쌀", "보리", "옥수수", "현미"};
         String[] vegeName = {"당근", "감자", "고구마", "호박", "오이"};
         String[] fruitName = {"사과", "오렌지", "메론", "레몬", "두리안", "바나나"};
@@ -42,13 +43,13 @@ public class Main {
             if(checkNum==1){
                 System.out.println("게임 플레이");
                 sr.gameTopScreen(new String[]{"앗! 야생의 작물이 나타났다!!","어떤 행동을 취해야 할까?"});
-                sr.gameMiddleScreen("Null", wheatName[3], "wheat", Nasus.mana);
+                sr.gameMiddleScreen(Yumi.name, wheatName[3], "wheat", Nasus.mana);
                 sr.gameBottomScreen("1. 수확한다\t\t\t2.지나친다\t\t\t3.상점");
                 gameInput[0] = sc.next();
                 int b = cal.inputCheck(gameInput[0]);
                 if(b==1){
                     sr.gameTopScreen(new String[]{"수확하려 합니다!!", "스킬을 사용 할까요?"});
-                    sr.gameMiddleScreen("Null", wheatName[3], "wheat", Nasus.mana);
+                    sr.gameMiddleScreen(Yumi.name, wheatName[3], "wheat", Nasus.mana);
                     sr.gameBottomScreen("1. 사용한다\t\t\t2.사용하지 않는다");
                     gameInput[1] = sc.next();
                     int c = cal.inputCheck(gameInput[1]);
@@ -58,7 +59,7 @@ public class Main {
                                 //스킬을 사용하여 완전 수확
                                 Nasus.useMana();
                                 sr.gameTopScreen(new String[]{"!!【흡수의 일격】!!", "스킬을 사용하여 온전한 수확을 하였습니다!"});
-                                sr.gameMiddleScreen("Null", wheatName[3], "wheat", Nasus.mana);
+                                sr.gameMiddleScreen(Yumi.name, wheatName[3], "wheat", Nasus.mana);
                                 sr.gameBottomScreen("Get @@@@$~!");
                                 Thread.sleep(3000);
                                 sr.movingScreen();
