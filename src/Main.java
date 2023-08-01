@@ -4,32 +4,10 @@ import java.time.LocalDateTime;
 import java.util.Random;
 public class Main {
     //정수인지 확인하는 메서드
-    static boolean isInteger(String strValue){
-        try{
-            Integer.parseInt(strValue);
-            return true;
-        }catch (NumberFormatException ex){
-            return false;
-        }
-    }
-    static int inputCheck(String strValue){
-        if(isInteger(strValue)){
-            if(Integer.parseInt(strValue)==1){
-                return 1;
-            }
-            else if (Integer.parseInt(strValue)==2) {
-                return 2;
-            }
-            else{
-                return 3;
-            }
-        }
-        else{
-            return 4;
-        }
-    }
+
+
     public static void main(String[] args) {
-        String a = "";
+        String a;
         int checkNum;
         String[] wheatName = {"쌀", "보리", "옥수수", "현미"};
         String[] vegeName = {"당근", "감자", "고구마", "호박", "오이"};
@@ -43,13 +21,13 @@ public class Main {
             wheatList[i] = new wheat(0, rand.nextInt(91)+10, wheatName[i%4], "wheat");
         }
         for (int i = 0; i < vegeList.length; i++) {
-            vegeList[i] = new vege(0, rand.nextInt(91)+10, vegeName[i%5], "wheat");
+            vegeList[i] = new vege(0, rand.nextInt(91)+10, vegeName[i%5], "vege");
         }
         for (int i = 0; i < fruitList.length; i++) {
-            fruitList[i] = new fruit(0, rand.nextInt(91)+10, fruitName[i%6], "wheat");
+            fruitList[i] = new fruit(0, rand.nextInt(91)+10, fruitName[i%6], "fruit");
         }
+        calculator cal = new calculator();
 
-        //메인화면 만들기
         //시작화면 출력
         Screen sr = new Screen();
         sr.startScreen();
@@ -58,11 +36,11 @@ public class Main {
         a = sc.next();
 
         while (true){
-            checkNum = inputCheck(a);
+            checkNum = cal.inputCheck(a);
             if(checkNum==1){
                 System.out.println("게임 플레이");
                 sr.startingScreen();
-                sr.gameScreen("Null", "Null", "Null", "■ ■ ■");
+                sr.controlScreen("Null", "Null", "Null", "■ ■ ■");
                 break;
             }
             else if(checkNum==2){

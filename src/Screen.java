@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //화면을 출력하는 클래스
 public class Screen {
     //시작화면 출력
@@ -13,7 +15,6 @@ public class Screen {
         System.out.println("┃                                                            ┃");
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }
-
     void startingScreen() {
         try {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
@@ -82,18 +83,6 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
             Thread.sleep(100);
-
-
-        } catch (Exception e) {
-            System.out.println("에러로 초기화면 출력");
-            startScreen();
-        }
-
-
-    }
-
-    void gameScreen(String tool, String grainName, String grainType, String mana) {
-        try {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                                                                      ┃");
             System.out.println("┃                                                                      ┃");
@@ -118,33 +107,67 @@ public class Screen {
             System.out.println("┃                                                                      ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
             Thread.sleep(5000);
-            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                      앗!!! 야생의 작물이 나타났다!!                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃        작물 이름 : "+grainName+"                    현재 마나 :  "+mana+"           ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃        작물 종류 : "+grainType+"                    현재 도구 :  "+tool+"            ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃          1. 수확한다          2. 지나친다            3. 상점             ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+
 
         } catch (Exception e) {
             System.out.println("에러로 초기화면 출력");
             startScreen();
         }
+
+
+    }
+    void gameTopScreen(String[] word){
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃\t\t\t\t\t\t"+word[0]+"\t\t\t\t\t\t┃");
+        System.out.println("┃\t\t\t\t\t\t"+word[1]+"\t\t\t\t\t\t┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+    }
+    void gameMiddleScreen(String tool, String grainName, String grainType, String mana){
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃        작물 이름 : "+grainName+"                    현재 마나 :  "+mana+"           ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃        작물 종류 : "+grainType+"                    현재 도구 :  "+tool+"            ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+    }
+    void gameBottomScreen(String word){
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃\t\t\t\t\t"+word+"\t\t\t\t\t┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    }
+
+    void controlScreen(String tool, String grainName, String grainType, String mana) {
+        gameTopScreen(new String[]{"앗! 야생의 작물이 나타났다!!","어떤 행동을 취해야 할까?"});
+        gameMiddleScreen(tool, grainName, grainType, mana);
+        gameBottomScreen("1. 수확한다\t\t\t2.지나친다\t\t\t3.상점");
+        Scanner sc = new Scanner(System.in);
+        String a;
+        a = sc.next();
+        if (a=="1"){
+
+        }
+        else if(a=="2"){
+
+        }
+        else if(a=="3"){
+
+        }
+        else{
+            System.out.println("잘못된 입력 입니다.");
+        }
+    }
+
+    void gameScreen(){
+
     }
 }
