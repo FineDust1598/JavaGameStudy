@@ -1,6 +1,6 @@
 public class character {
-    float mana;
-    public character(float mana){
+    String mana;
+    public character(String mana){
         this.mana = mana;
     }
 }

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.time.LocalDateTime;
 //화면을 출력하는 클래스
 public class Screen {
     //시작화면 출력
@@ -15,7 +15,38 @@ public class Screen {
         System.out.println("┃                                                            ┃");
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }
+    void movingScreen(){
+        try {
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                             밭으로 이동중...                           ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃        작물 이름 : Null                    현재 마나 :  Null            ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃        작물 종류 : Null                    현재 도구 :  Null            ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃          1. 수확한다          2. 지나친다            3. 상점             ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
     void startingScreen() {
+        //세팅 대신 설명으로 바꾸고 이 함수를 출력하게 변경 할 예정
         try {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                                                            ┃");
@@ -83,32 +114,6 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
             Thread.sleep(100);
-            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                             밭으로 이동중...                           ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃        작물 이름 : Null                    현재 마나 :  Null            ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃        작물 종류 : Null                    현재 도구 :  Null            ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┃          1. 수확한다          2. 지나친다            3. 상점             ┃");
-            System.out.println("┃                                                                      ┃");
-            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(5000);
-
-
         } catch (Exception e) {
             System.out.println("에러로 초기화면 출력");
             startScreen();
@@ -146,28 +151,5 @@ public class Screen {
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }
 
-    void controlScreen(String tool, String grainName, String grainType, String mana) {
-        gameTopScreen(new String[]{"앗! 야생의 작물이 나타났다!!","어떤 행동을 취해야 할까?"});
-        gameMiddleScreen(tool, grainName, grainType, mana);
-        gameBottomScreen("1. 수확한다\t\t\t2.지나친다\t\t\t3.상점");
-        Scanner sc = new Scanner(System.in);
-        String a;
-        a = sc.next();
-        if (a=="1"){
 
-        }
-        else if(a=="2"){
-
-        }
-        else if(a=="3"){
-
-        }
-        else{
-            System.out.println("잘못된 입력 입니다.");
-        }
-    }
-
-    void gameScreen(){
-
-    }
 }
