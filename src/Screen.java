@@ -10,8 +10,8 @@ public class Screen {
         System.out.println("┃                           농서스                            ┃");
         System.out.println("┃                                                            ┃");
         System.out.println("┃                                                            ┃");
-        System.out.println("┃                        1. Play                             ┃");
-        System.out.println("┃                        2. Setting                          ┃");
+        System.out.println("┃                         1. Play                            ┃");
+        System.out.println("┃                         2. Story                           ┃");
         System.out.println("┃                                                            ┃");
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }
@@ -58,7 +58,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(50);
+            Thread.sleep(5000);
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
@@ -69,7 +69,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(50);
+            Thread.sleep(5000);
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
@@ -80,7 +80,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(50);
+            Thread.sleep(5000);
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                        『게임 설명』                           ┃");
             System.out.println("┃                                                            ┃");
@@ -91,7 +91,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(50);
+            Thread.sleep(5000);
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                        『게임 설명』                           ┃");
             System.out.println("┃                                                            ┃");
@@ -102,7 +102,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(50);
+            Thread.sleep(5000);
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃                        『게임 설명』                           ┃");
             System.out.println("┃                                                            ┃");
@@ -113,7 +113,7 @@ public class Screen {
             System.out.println("┃                                                            ┃");
             System.out.println("┃                                                            ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            Thread.sleep(100);
+            Thread.sleep(5000);
         } catch (Exception e) {
             System.out.println("에러로 초기화면 출력");
             startScreen();
@@ -146,7 +146,7 @@ public class Screen {
     }
     void gameBottomScreen(String word){
         System.out.println("┃                                                                      ┃");
-        System.out.println("┃\t\t\t\t\t"+word+"\t\t\t\t\t┃");
+        System.out.println("┃\t\t\t\t"+word+"\t\t\t\t┃");
         System.out.println("┃                                                                      ┃");
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }

@@ -14,21 +14,13 @@ public class calculator {
     }
     public int inputCheck(String strValue){
         if(isInteger(strValue)){
-            if(Integer.parseInt(strValue)==1){
-                return 1;
-            }
-            else if (Integer.parseInt(strValue)==2) {
-                return 2;
-            }
-            else{
-                return 3;
-            }
+            return Integer.parseInt(strValue);
         }
         else{
-            return 4;
+            return 0;
         }
     }
-    public String randList(String word){
+    public String randList(int num, String word){
         fruit[] fruitList = new fruit[10];
         vege[] vegeList = new vege[10];
         wheat[] wheatList = new wheat[10];
@@ -46,7 +38,6 @@ public class calculator {
         for (int i = 0; i < wheatList.length; i++) {
             wheatList[i] = new wheat("■ ■ ■", rand.nextInt(91)+10, wheatName[i%4], "wheat");
         }
-        num = rand.nextInt(3);
         if(word == "name"){
             switch (num){
                 case 0:
