@@ -5,4 +5,12 @@ public class tool {
         this.name = name;
         this.price = price;
     }
+
+    public boolean toolCheck(String type){
+        switch (type){
+            case "wheat":
+                return true;
+        }
+        return false;
+    }
 }
