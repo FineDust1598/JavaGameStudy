@@ -25,6 +25,7 @@ public class Main  {
         //시작화면 출력
         Screen sr = new Screen();
         sr.startScreen();
+
         //입력값 받기
         Scanner sc = new Scanner(System.in);
         startInput = sc.next();
@@ -32,6 +33,7 @@ public class Main  {
         while (gamePlay){
             checkNum = cal.inputCheck(startInput);
             String[] gameInput = new String[4];
+            boolean isStore = true;
             if(checkNum==1){
                 randnum = rand.nextInt(3);
                 String nowName = cal.randList(randnum, "name");
@@ -106,6 +108,84 @@ public class Main  {
                 }
                 else if(b==3){
                     //상점 화면 출력
+                    while (isStore){
+                        sr.storeScreen();
+                        gameInput[1] = sc.next();
+                        int c = cal.inputCheck(gameInput[1]);
+                        if(c ==1){
+                            //도구 화면 출력
+                            sr.storeToolTopScreen();
+                            sr.storeToolBottomScreen("원하는 도구를 선택해주세요!");
+                            gameInput[1] = sc.next();
+                            int d = cal.inputCheck(gameInput[1]);
+
+                            sr.storeToolTopScreen();
+                            sr.storeToolBottomScreen("구매하시겠습니까? 구매하시려면 '1', 아니면 '2'를 입력하세요");
+                            if(d == 1){
+                                //유미 구매
+                                gameInput[1] = sc.next();
+                                int e = cal.inputCheck(gameInput[1]);
+                                if(e == 1){
+                                    //구매 완료
+                                    sr.movingScreen();
+                                    isStore = false;
+                                }
+                                else{
+                                    //구매 포기로 초기화면
+
+                                }
+                            }
+                            else if(d == 2){
+                                //자이라 구매
+                                gameInput[1] = sc.next();
+                                int e = cal.inputCheck(gameInput[1]);
+                                if(e == 1){
+                                    //구매 완료
+                                    sr.movingScreen();
+                                    isStore = false;
+                                }
+                                else{
+                                    //구매 포기로 초기화면
+                                    sr.movingScreen();
+                                }
+                            }
+                            else if(d == 3){
+                                //쓰레쉬 구매
+                                gameInput[1] = sc.next();
+                                int e = cal.inputCheck(gameInput[1]);
+                                if(e == 1){
+                                    //구매 완료
+                                    sr.movingScreen();
+                                    isStore = false;
+                                }
+                                else{
+                                    //구매 포기로 초기화면
+                                    sr.movingScreen();
+                                }
+                            }
+                            else{
+                                //잘못된 입력 으로 초기 화면 출력
+                            }
+                        }
+                        else if(c == 2){
+                            //마나 화면 출력
+                            sr.storeManaScreen();
+                            gameInput[1] = sc.next();
+                            int d = cal.inputCheck(gameInput[1]);
+                            if(d == 1){
+                                //마나 충전
+                                Nasus.mana = "■ ■ ■";
+                            }
+                            else{
+                                //나가기
+                                sr.movingScreen();
+                            }
+                        }
+                        else{
+                            //잘못된 입력으로 나가기
+                            isStore = false;
+                        }
+                    }
                 }
                 else if(b==4){
                     gamePlay = false;
@@ -115,17 +195,20 @@ public class Main  {
                 }
 
             }
+
             else if(checkNum==2){
                 System.out.println("세팅화면 출력");
-                sr.startingScreen();
+                sr.storyScreen();
                 sr.startScreen();
                 startInput = sc.next();
             }
+
             else if(checkNum==3){
                 System.out.println("잘못된 숫자 입력, 화면 재 출력");
                 sr.startScreen();
                 startInput = sc.next();
             }
+
             else{
                 System.out.println("잘못된 문자 입력, 화면 재 출력");
                 sr.startScreen();

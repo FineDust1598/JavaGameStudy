@@ -4,19 +4,11 @@ public class calculator {
     int num;
     Random rand = new Random();
 
-    public boolean isInteger(String strValue){
-        try{
-            Integer.parseInt(strValue);
-            return true;
-        }catch (NumberFormatException ex){
-            return false;
-        }
-    }
     public int inputCheck(String strValue){
-        if(isInteger(strValue)){
-            return Integer.parseInt(strValue);
-        }
-        else{
+        try{
+            int intvalue = Integer.parseInt(strValue);
+            return intvalue;
+        }catch (NumberFormatException ex){
             return 0;
         }
     }

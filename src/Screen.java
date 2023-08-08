@@ -45,7 +45,7 @@ public class Screen {
             throw new RuntimeException(e);
         }
     }
-    void startingScreen() {
+    void storyScreen() {
         //세팅 대신 설명으로 바꾸고 이 함수를 출력하게 변경 할 예정
         try {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
@@ -151,5 +151,59 @@ public class Screen {
         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
     }
 
+    void storeScreen(){
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                            ※ ◀ Store ▶ ※                            ┃");
+        System.out.println("┃                  도구를 구매 하거나 마나를 수급할 수 있습니다.               ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃             1.도구 구매        2.마나 재생        3. 나가기              ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    }
+    void storeToolTopScreen(){
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃                         Type                 Price                   ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃       ● 유미            Fruit                 3,000                   ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃       ● 자이라           Vege                 7,000                   ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃       ● 쓰레쉬           Wheat                8,000                   ┃");
+        System.out.println("┃                                                                      ┃");
+
+    }
+    void storeToolBottomScreen(String word) {
+        System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┃             "+word+"              ┃");
+        System.out.println("┃                                                                      ┃");
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    }
+        void storeManaScreen(){
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                         마나를 충전 하시겠습니까?                        ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┃                  1. 구매                  2. 나가기                    ┃");
+            System.out.println("┃                                                                      ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    }
 
 }
