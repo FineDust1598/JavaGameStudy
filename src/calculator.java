@@ -30,25 +30,30 @@ public class calculator {
         for (int i = 0; i < wheatList.length; i++) {
             wheatList[i] = new wheat("■ ■ ■", rand.nextInt(91)+10, wheatName[i%4], "wheat");
         }
-        if(word == "name"){
-            switch (num){
-                case 0:
+        if(word.equals("name")){
+            switch (num) {
+                case 0 -> {
                     return wheatList[rand.nextInt(4)].name;
-                case 1:
+                }
+                case 1 -> {
                     return vegeList[rand.nextInt(5)].name;
-                case 2:
+                }
+                case 2 -> {
                     return fruitList[rand.nextInt(6)].name;
-
+                }
             }
         }
-        else if(word == "type"){
-            switch (num){
-                case 0:
+        else if(word.equals("type")){
+            switch (num) {
+                case 0 -> {
                     return wheatList[num].type;
-                case 1:
+                }
+                case 1 -> {
                     return vegeList[num].type;
-                case 2:
+                }
+                case 2 -> {
                     return fruitList[num].type;
+                }
             }
         }
         else{
