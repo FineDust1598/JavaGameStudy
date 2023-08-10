@@ -34,7 +34,6 @@ public class Main extends Thread {
         nasus Nasus = new nasus("■ ■ ■",5000);
         calculator cal = new calculator();
         Random rand = new Random();
-        generate gr = new generate();
         Thread t = new Main();
 
         //시작화면 출력
