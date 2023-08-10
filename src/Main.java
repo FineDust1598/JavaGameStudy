@@ -2,17 +2,40 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.util.Random;
-public class Main  {
+public class Main extends Thread {
+    static String anyMana = "■ ■ ■";
+
+    public static String returnToMana(){
+        try{
+            System.out.println("               ▶※마나를 일부 회복하였습니다※◀");
+        }catch (Exception e) {
+            System.out.println("에러로 초기화면 출력");
+        }
+        return "■ ■ □";
+    }
+    public void run() {
+        try{
+            System.out.println("          ▶※마나가 없어 명상을 하며 채우고 있습니다. 30초후 마나가 일부 차오릅니다!※◀");
+            Thread.sleep(30000);
+            anyMana = returnToMana();
+
+        }catch(Exception ignored){
+        }
+
+    }
+
     public static void main(String[] args) {
         String startInput;
         int checkNum;
         int randnum;
         boolean gamePlay = true;
 
+
         nasus Nasus = new nasus("■ ■ ■",5000);
         calculator cal = new calculator();
         Random rand = new Random();
         generate gr = new generate();
+        Thread t = new Main();
 
         //시작화면 출력
         Screen sr = new Screen();
@@ -26,6 +49,9 @@ public class Main  {
             checkNum = cal.inputCheck(startInput);
             String[] gameInput = new String[4];
             boolean isStore = true;
+            //초기 마나 설정
+            Nasus.mana = anyMana;
+
             if(checkNum==1){
                 //인스턴스 설정 및 기초변수 설정
                 randnum = rand.nextInt(3);
@@ -49,6 +75,7 @@ public class Main  {
                     int c = cal.inputCheck(gameInput[1]);
                     if(c==1){
                         try{
+
                             if(!Nasus.mana.equals("□ □ □")){
                                 //스킬을 사용하여 완전 수확
                                 Nasus.useMana();
@@ -56,6 +83,7 @@ public class Main  {
                                 sr.gameMiddleScreen(Nasus.getTool("name"), nowName, nowType, Nasus.mana);
                                 sr.gameBottomScreen("                  Get "+(int)(2.5*nowPrice)+"$~!!!!!");
                                 Nasus.money += (int) (2.5*nowPrice);
+                                anyMana = Nasus.mana; // 사용후의 마나를 백업
                                 Thread.sleep(3000);
                                 sr.movingScreen();
                             }
@@ -63,8 +91,7 @@ public class Main  {
                                 //마나가 없어 스킬사용 불가
                                 //1번에 한하여 마나를 일부 채울수 있음
                                 System.out.println("마나가 없어 스킬을 사용할 수 없습니다!");
-                                gr.start();
-                                Nasus.mana = gr.returnMana(Nasus.mana);
+                                t.start();
                             }
                         } catch (Exception e) {
                             System.out.println("에러로 초기화면 출력");
