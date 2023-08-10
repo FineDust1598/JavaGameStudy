@@ -1,4 +1,4 @@
-# Dust's game
+# Dust's game(농서스)
 
 
 ### :game_die:[게임화면]
